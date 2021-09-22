@@ -39,6 +39,7 @@ jobs:
             LOCALE=${file%.toml}
             cargo build --release --target=x86_64-unknown-linux-musl
             mv ./target/x86_64-unknown-linux-musl/release/rssbot rssbot-$LOCALE-amd64-linux
+            md5sum rssbot-*-amd64-linux
         done
     - name: Create Release
       id: create_release
